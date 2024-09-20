@@ -2,5 +2,6 @@
   "itemGroup.cartographers_worldmap.name": "Cartographers Worldmap",
   "item.cartographers_worldmap.worldmap": "Worldmap",
   "item.cartographers_worldmap.cartographers_pen": "Cartographers Pen",
+  "item.cartographers_worldmap.cartography_ink": "Cartography Ink",
   "tag.item.cartographers_worldmap.maps": "Maps"
 }
