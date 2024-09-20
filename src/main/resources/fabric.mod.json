@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "cartographers-worldmap",
+  "version": "${version}",
+
+  "name": "Cartographer's Worldmap",
+  "description": "Adds a worldmap that fits in with survival.",
+  "authors": [
+    "Hobbyshop"
+  ],
+  "contact": {
+    "sources": "https://github.com/hobbyshop/cartographers-worldmap"
+  },
+
+  "license": "GPL-3.0",
+  "icon": "assets/cartographers-worldmap/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "io.github.hobbyshop.cw.CartographersWorldmap"
+      }
+    ]
+  },
+  "mixins": [
+    "cartographrs-worldmap.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "~${minecraft_version}",
+    "java": ">=21",
+    "fabric-language-kotlin": ">=${fabric_kotlin_version}"
+  }
+}
