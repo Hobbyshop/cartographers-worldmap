@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " M ",
+    "MPM",
+    " M "
+  ],
+  "key": {
+    "M": {
+      "tag": "cartographers_worldmap:maps"
+    },
+    "P": {
+      "item": "cartographers_worldmap:cartographers_pen"
+    }
+  },
+  "result": {
+    "id": "cartographers_worldmap:worldmap",
+    "count": 1
+  }
+}
