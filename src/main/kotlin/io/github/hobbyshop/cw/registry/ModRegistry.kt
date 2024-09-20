@@ -2,12 +2,17 @@ package io.github.hobbyshop.cw.registry
 
 import io.github.hobbyshop.cw.utils.id
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup
+import net.fabricmc.fabric.api.`object`.builder.v1.trade.TradeOfferHelper
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
+import net.minecraft.item.Items
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.text.Text
 import net.minecraft.util.Rarity
+import net.minecraft.village.TradeOffer
+import net.minecraft.village.TradedItem
+import net.minecraft.village.VillagerProfession
 
 object ModRegistry {
 
@@ -31,6 +36,20 @@ object ModRegistry {
         Registry.register(Registries.ITEM, id("cartographers_pen"), CARTOGRAPHERS_PEN)
         Registry.register(Registries.ITEM, id("worldmap"), WORLDMAP)
         Registry.register(Registries.ITEM, id("cartography_ink"), CARTOGRAPHY_INK)
+        this.registerVillagerTrades()
+    }
+
+    private fun registerVillagerTrades() {
+        TradeOfferHelper.registerVillagerOffers(VillagerProfession.CARTOGRAPHER, 5) { offers ->
+            val item = TradedItem(Items.EMERALD, 20)
+            val offer = TradeOffer(item, ItemStack(CARTOGRAPHERS_PEN), 4, 1, 0.2f)
+            offers.add { _, _ -> offer }
+        }
+        TradeOfferHelper.registerVillagerOffers(VillagerProfession.CARTOGRAPHER, 3) { offers ->
+            val item = TradedItem(Items.EMERALD, 2)
+            val offer = TradeOffer(item, ItemStack(CARTOGRAPHY_INK, 4), 16, 1, 0.08f)
+            offers.add { _, _ -> offer }
+        }
     }
 
 }
