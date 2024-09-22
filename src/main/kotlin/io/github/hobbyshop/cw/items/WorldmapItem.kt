@@ -16,7 +16,7 @@ class WorldmapItem(settings: Settings) : Item(settings) {
         if (!world.isClient) {
             user.openHandledScreen(SimpleNamedScreenHandlerFactory({ syncId, playerInv, player ->
                 WorldmapScreenHandler(syncId, playerInv)
-            }, Text.translatable("item.cartographers_worldmap.worldmap")))
+            }, Text.translatable("screen.cartographers_worldmap.ink_jar")))
         }
 
         return TypedActionResult.success(user.getStackInHand(hand))
