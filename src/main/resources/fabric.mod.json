@@ -22,6 +22,12 @@
         "adapter": "kotlin",
         "value": "io.github.hobbyshop.cw.CartographersWorldmap"
       }
+    ],
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "io.github.hobbyshop.cw.CartographersWorldmapClient"
+      }
     ]
   },
   "mixins": [

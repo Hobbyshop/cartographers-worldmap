@@ -1,7 +1,12 @@
 package io.github.hobbyshop.cw
 
 import io.github.hobbyshop.cw.registry.ModRegistry
+import io.github.hobbyshop.cw.ui.screens.WorldmapScreen
+import net.fabricmc.api.ClientModInitializer
+import net.fabricmc.api.EnvType
+import net.fabricmc.api.Environment
 import net.fabricmc.api.ModInitializer
+import net.minecraft.client.gui.screen.ingame.HandledScreens
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
@@ -14,6 +19,17 @@ object CartographersWorldmap : ModInitializer {
 
     override fun onInitialize() {
         ModRegistry.createRegistry()
+    }
+
+}
+
+@Environment(EnvType.CLIENT)
+object CartographersWorldmapClient : ClientModInitializer {
+
+    override fun onInitializeClient() {
+        HandledScreens.register(ModRegistry.WORLDMAP_SCREEN_HANDLER) { handler, playerInv, name ->
+            WorldmapScreen(handler, playerInv, name)
+        }
     }
 
 }
