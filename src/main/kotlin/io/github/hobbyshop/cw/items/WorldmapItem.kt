@@ -1,6 +1,6 @@
 package io.github.hobbyshop.cw.items
 
-import io.github.hobbyshop.cw.ui.handlers.WorldmapScreenHandler
+import io.github.hobbyshop.cw.ui.handlers.InkJarScreenHandler
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
@@ -15,7 +15,7 @@ class WorldmapItem(settings: Settings) : Item(settings) {
     override fun use(world: World, user: PlayerEntity, hand: Hand): TypedActionResult<ItemStack> {
         if (!world.isClient) {
             user.openHandledScreen(SimpleNamedScreenHandlerFactory({ syncId, playerInv, player ->
-                WorldmapScreenHandler(syncId, playerInv)
+                InkJarScreenHandler(syncId, playerInv)
             }, Text.translatable("screen.cartographers_worldmap.ink_jar")))
         }
 

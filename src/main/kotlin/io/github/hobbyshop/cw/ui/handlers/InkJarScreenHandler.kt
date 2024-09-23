@@ -3,14 +3,13 @@ package io.github.hobbyshop.cw.ui.handlers
 import io.github.hobbyshop.cw.registry.ModRegistry
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.entity.player.PlayerInventory
-import net.minecraft.inventory.Inventories
 import net.minecraft.inventory.Inventory
 import net.minecraft.inventory.SimpleInventory
 import net.minecraft.item.ItemStack
 import net.minecraft.screen.ScreenHandler
 import net.minecraft.screen.slot.Slot
 
-class WorldmapScreenHandler(syncId: Int, playerInv: PlayerInventory, private val inventory: Inventory) : ScreenHandler(ModRegistry.WORLDMAP_SCREEN_HANDLER, syncId) {
+class InkJarScreenHandler(syncId: Int, playerInv: PlayerInventory, private val inventory: Inventory) : ScreenHandler(ModRegistry.INK_JAR_SCREEN_HANDLER, syncId) {
 
     constructor(syncId: Int, playerInv: PlayerInventory) : this(syncId, playerInv, SimpleInventory(1))
 

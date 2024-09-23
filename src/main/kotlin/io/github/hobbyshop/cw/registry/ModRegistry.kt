@@ -1,7 +1,7 @@
 package io.github.hobbyshop.cw.registry
 
 import io.github.hobbyshop.cw.items.WorldmapItem
-import io.github.hobbyshop.cw.ui.handlers.WorldmapScreenHandler
+import io.github.hobbyshop.cw.ui.handlers.InkJarScreenHandler
 import io.github.hobbyshop.cw.utils.id
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup
 import net.fabricmc.fabric.api.`object`.builder.v1.trade.TradeOfferHelper
@@ -32,7 +32,7 @@ object ModRegistry {
         }
         .build()
 
-    val WORLDMAP_SCREEN_HANDLER = ScreenHandlerType({ syncId, playerInv -> WorldmapScreenHandler(syncId, playerInv) }, FeatureSet.empty())
+    val INK_JAR_SCREEN_HANDLER = ScreenHandlerType({ syncId, playerInv -> InkJarScreenHandler(syncId, playerInv) }, FeatureSet.empty())
 
     private val CARTOGRAPHERS_PEN = Item(Item.Settings().rarity(Rarity.UNCOMMON))
     private val WORLDMAP = WorldmapItem(Item.Settings().maxCount(1).component(DataComponentTypes.CONTAINER, ContainerComponent.DEFAULT))
@@ -41,7 +41,7 @@ object ModRegistry {
     fun createRegistry() {
         Registry.register(Registries.ITEM_GROUP, id("group"), ITEM_GROUP)
 
-        Registry.register(Registries.SCREEN_HANDLER, id("worldmap_screen"), WORLDMAP_SCREEN_HANDLER)
+        Registry.register(Registries.SCREEN_HANDLER, id("ink_jar_screen"), INK_JAR_SCREEN_HANDLER)
 
         Registry.register(Registries.ITEM, id("cartographers_pen"), CARTOGRAPHERS_PEN)
         Registry.register(Registries.ITEM, id("worldmap"), WORLDMAP)

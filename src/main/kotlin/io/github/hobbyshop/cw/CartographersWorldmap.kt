@@ -1,7 +1,7 @@
 package io.github.hobbyshop.cw
 
 import io.github.hobbyshop.cw.registry.ModRegistry
-import io.github.hobbyshop.cw.ui.screens.WorldmapScreen
+import io.github.hobbyshop.cw.ui.screens.InkJarScreen
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.api.EnvType
 import net.fabricmc.api.Environment
@@ -27,8 +27,8 @@ object CartographersWorldmap : ModInitializer {
 object CartographersWorldmapClient : ClientModInitializer {
 
     override fun onInitializeClient() {
-        HandledScreens.register(ModRegistry.WORLDMAP_SCREEN_HANDLER) { handler, playerInv, name ->
-            WorldmapScreen(handler, playerInv, name)
+        HandledScreens.register(ModRegistry.INK_JAR_SCREEN_HANDLER) { handler, playerInv, name ->
+            InkJarScreen(handler, playerInv, name)
         }
     }
 

@@ -1,19 +1,18 @@
 package io.github.hobbyshop.cw.ui.screens
 
 import com.mojang.blaze3d.systems.RenderSystem
-import io.github.hobbyshop.cw.ui.handlers.WorldmapScreenHandler
+import io.github.hobbyshop.cw.ui.handlers.InkJarScreenHandler
 import io.github.hobbyshop.cw.ui.widgets.InkJarBackWidget
 import io.github.hobbyshop.cw.utils.id
 import net.minecraft.client.gui.DrawContext
 import net.minecraft.client.gui.screen.ingame.HandledScreen
-import net.minecraft.client.gui.widget.ButtonWidget
 import net.minecraft.client.render.GameRenderer
 import net.minecraft.entity.player.PlayerInventory
 import net.minecraft.text.Text
 
-class WorldmapScreen(
-    handler: WorldmapScreenHandler, inventory: PlayerInventory, title: Text
-) : HandledScreen<WorldmapScreenHandler>(handler, inventory, title) {
+class InkJarScreen(
+    handler: InkJarScreenHandler, inventory: PlayerInventory, title: Text
+) : HandledScreen<InkJarScreenHandler>(handler, inventory, title) {
 
     private val texture = id("textures/gui/map_background.png")
 
