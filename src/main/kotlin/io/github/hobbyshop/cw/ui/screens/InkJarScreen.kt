@@ -25,7 +25,7 @@ class InkJarScreen(
             54, 54,
             Text.translatable("screen.cartographers_worldmap.ink_jar.back")
         ) { button ->
-            println("hello worldmap")
+            client?.setScreen(WorldmapScreen())
         })
     }
 
